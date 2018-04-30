@@ -1,0 +1,94 @@
+/* ========================================
+ * Interactive Gallery
+ *  
+ * Author: Chris Howell
+ * Date: 04/29/2018
+ * Project 4
+ * =======================================*/
+
+/*=======================
+ * Base styles 
+ *=======================*/
+ 
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    flex: 1 1 auto;
+    align-self: center;
+}
+
+body {
+    background-color: #fff;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #7b8a96;
+    width: 60%;
+    margin: 0 auto;
+}
+h1 {
+    margin: 0;
+    font-size: 1.6em;
+}
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #274e6d;
+}
+
+@media(min-width: 481px){
+    .container {
+        max-width: 92%;
+        margin: 0 auto;
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        align-self: center;
+        margin: 0 2px;
+    }
+
+}
+@media(min-width: 769px){
+    .container {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .item {
+        flex: 1 25%;
+    }
+
+}
+@media(min-width: 1025px){
+    .container {
+        max-width: 72%;
+        margin: 0 auto;
+    }
+    .row {
+    }
+    .item {
+        
+        
+    }
+}
