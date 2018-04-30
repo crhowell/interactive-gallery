@@ -1,2 +1,2 @@
-# interactive-gallery
+# Interactive Gallery
 FEWD Project 4
