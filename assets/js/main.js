@@ -5,17 +5,28 @@
 */
 
 function load_images($images){
-    var $gallery = $('#primary-gallery')
-    $.each($images, function($idx,$val){
-        $img_el = '<li class="item"><img src="photos/thumbnails/' + $val + '" /></li>';
+    var $gallery = $('#primary-gallery');
+    $.each($images, function($idx, $val){
+        $img_tag = '<img src="photos/thumbnails/' + $val[0] + '" title="' + $val[1] + '" alt="' + $val[2] + '" />';
+        $a_tag = '<a href="photos/'+ $val[0] + '" data-lightbox="gallery" data-title="' + $val[2] + '">' + $img_tag + ' </a>'
+        $img_el = '<li class="item" data-title="' + $val[1] + ' ' + $val[2] + '">' + $a_tag + '</li>';
         $gallery.append($img_el);
     });
 }
 
 var $imagesNames = [
-    '01.jpg','02.jpg','03.jpg','04.jpg',
-    '05.jpg','06.jpg','07.jpg','08.jpg',
-    '09.jpg','10.jpg','11.jpg','12.jpg'
+    ['01.jpg', 'Hay Bales', 'I love hay bales. Took this snap on a drive through the countryside past some straw fields.'],
+    ['02.jpg', 'Lake', 'The lake was so calm today. We had a great view of the snow on the mountains from here.'],
+    ['03.jpg', 'Canyon', 'I hiked to the top of the mountain and got this picture of the canyon and trees below.'],
+    ['04.jpg', 'Iceberg', 'It was amazing to see an iceberg up close, it was so cold but didn’t snow today.'],
+    ['05.jpg', 'Desert', 'The red cliffs were beautiful. It was really hot in the desert but we did a lot of walking through the canyons.'], 
+    ['06.jpg', 'Fall', 'Fall is coming, I love when the leaves on the trees start to change color.'], 
+    ['07.jpg', 'Plantation', 'I drove past this plantation yesterday, everything is so green!'], 
+    ['08.jpg', 'Dunes', 'My summer vacation to the Oregon Coast. I love the sandy dunes!.'],
+    ['09.jpg', 'Countryside Lane', 'We enjoyed a quiet stroll down this countryside lane.'], 
+    ['10.jpg', 'Sunset', 'Sunset at the coast! The sky turned a lovely shade of orange.'], 
+    ['11.jpg', 'Cave', 'I did a tour of a cave today and the view of the landscape below was breathtaking.'], 
+    ['12.jpg', 'Bluebells', 'I walked through this meadow of bluebells and got a good view of the snow on the mountain before the fog came in.']
 ];
 
 load_images($imagesNames);
