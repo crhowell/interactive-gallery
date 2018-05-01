@@ -10,27 +10,53 @@
     <meta charset="utf-8">
     <title>Chris Howell&#39;s Interactive Gallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/lightbox.css">
+
 </head>
 <body>
   <header class="header-content">
     <div class="search">
-      <input id="search_box" type="text" name="filter" placeholder="Search..."/>
+      <input id="search_box" type="text" name="filter" placeholder="Search..." data-toggle="hideseek"/>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <ul id="primary-gallery" class="row"></ul>
+      <ul id="primary-gallery" class="row data"></ul>
     </div>
   </main>
 
   <footer>
-    <p>Interactive Gallery</p>
+    <h3>Interactive Gallery</h3>
+    <p>by Chris Howell</p>
   </footer>
 
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.hideseek.min.js"></script>
+  <script type="text/javascript" src="assets/js/lightbox.js"></script>
   <script type="text/javascript" src="assets/js/main.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    /* Lightbox settings */
+    lightbox.option({
+      'resizeDuration': 200,
+      'maxWidth': 600,
+      'showImageNumberLabel': false,
+      'wrapAround': true
+    });
+
+    /* HideSeek */
+    
+    $('#search_box').hideseek({
+      list:      '.data',
+      nodata:    'Could not find any results.',
+      attribute: 'data-title',
+      min_chars: 1
+    });
+  });
+  </script>
 </body>
 </html>
